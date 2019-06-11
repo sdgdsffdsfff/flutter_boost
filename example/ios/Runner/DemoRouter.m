@@ -37,6 +37,10 @@
     }
 }
 
+- (BOOL)accessibilityEnable
+{
+    return YES;
+}
 
 
 - (void)closePage:(NSString *)uid animated:(BOOL)animated params:(NSDictionary *)params completion:(void (^)(BOOL))completion
@@ -48,4 +52,9 @@
         [self.navigationController popViewControllerAnimated:animated];
     }
 }
+
+- (void)flutterCanPop:(BOOL)canpop {
+    self.navigationController.interactivePopGestureRecognizer.enabled = !canpop;
+}
+
 @end

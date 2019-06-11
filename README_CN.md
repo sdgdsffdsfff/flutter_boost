@@ -16,12 +16,17 @@
 
 打开pubspec.yaml并将以下行添加到依赖项：
 
-Release 1.0 之前的版本
-
 ```json
-flutter_boost: ^0.0.400
+flutter_boost: ^0.0.412
 ```
 
+或者可以直接依赖github的项目的版本，Tag，pub发布会有延迟，推荐直接依赖Github项目
+```java
+flutter_boost:
+        git:
+            url: 'https://github.com/alibaba/flutter_boost.git'
+            ref: '0.0.412'
+```
 ## Dart代码的集成
 将init代码添加到App App
 
@@ -57,6 +62,8 @@ class _MyAppState extends State<MyApp> {
 ```
 
 ## iOS代码集成。
+
+注意：需要将libc++ 加入 "Linked Frameworks and Libraries" 中。
 
 使用FLBFlutterAppDelegate作为AppDelegate的超类
 
